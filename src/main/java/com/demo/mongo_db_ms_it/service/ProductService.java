@@ -22,7 +22,12 @@ public class ProductService {
     }
 
     public Product createProduct(Product product) {
-        return productRepository.save(product);
+        try {
+            return productRepository.save(product);
+        } catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public Product updateProduct(String id, Product product) {

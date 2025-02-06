@@ -1,11 +1,11 @@
+
 spring:
   application:
     name: mongo-db-ms-it
-
   data:
     mongodb:
-      uri: mongodb://admin:password@localhost:27017/mydb
-      database: mydb
+      uri: mongodb://admin:password@localhost:27017/?authSource=admin
+      database: dataset
 
 liquibase:
   change-log: classpath:/db/changelog/changelog-master.xml
