@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: mongo-db-ms-it
+
+  data:
+    mongodb:
+      uri: mongodb://admin:password@localhost:27017/mydb
+      database: mydb
+
+liquibase:
+  change-log: classpath:/db/changelog/changelog-master.xml
+
