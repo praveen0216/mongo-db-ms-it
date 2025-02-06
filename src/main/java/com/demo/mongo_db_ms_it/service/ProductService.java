@@ -1,5 +1,6 @@
 package com.demo.mongo_db_ms_it.service;
 
+import com.demo.mongo_db_ms_it.clients.ProductClient;
 import com.demo.mongo_db_ms_it.model.Product;
 import com.demo.mongo_db_ms_it.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,13 @@ import java.util.Optional;
 public class ProductService {
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private ProductClient productClient;
+
+    public Product getProduct(String productId) {
+        return productClient.getProductById(productId);
+    }
 
     public List<Product> getAllProducts() {
         return productRepository.findAll();

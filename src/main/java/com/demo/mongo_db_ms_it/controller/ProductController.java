@@ -37,6 +37,12 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
+    @GetMapping("/{id}/elasticsearch")
+    @Operation(summary = "Get product by ID from elastic search", description = "Retrieves a product by its unique ID")
+    public Product getProductFromES(@PathVariable String id) {
+        return productService.getProduct(id);
+    }
+
     @PostMapping
     @Operation(summary = "Create a new product", description = "Adds a new product to the database")
     public Product createProduct(@RequestBody Product product) {
